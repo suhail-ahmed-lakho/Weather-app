@@ -1,9 +1,12 @@
-
-
+import React from 'react';
+import WeatherDashboard from './Components/WeatherDashboard.jsx';
+import './App.css';
 
 function App() {
   return (
-    <h1></h1>
+    <div className="App">
+      <WeatherDashboard />
+    </div>
   );
 }
 

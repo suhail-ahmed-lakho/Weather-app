@@ -1,0 +1,90 @@
+.temperature-toggle {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.unit-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.unit-label.active {
+  color: #2196F3;
+  font-weight: 600;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e0e0e0;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.toggle-thumb {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 3px;
+  background: linear-gradient(145deg, #2196F3, #1976D2);
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider {
+  background-color: #bbdefb;
+}
+
+input:checked + .slider .toggle-thumb {
+  transform: translateX(30px);
+}
+
+/* Hover effect */
+.slider:hover .toggle-thumb {
+  box-shadow: 0 0 8px #2196F3;
+}
+
+/* Optional: Add animation */
+@keyframes toggleOn {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.toggle-thumb {
+  animation: toggleOn 0.3s ease-in-out;
+} 
